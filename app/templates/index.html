@@ -1,0 +1,162 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html lang="en" >
+<head>
+	<title>MyDoc Appointment</title>
+	<link rel="icon" href="/static/images/doc.png" type="image/gif" sizes="16x16">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet' href='/static/css/materialize.css'>
+	<link rel='stylesheet' href='/static/css/materialize.min.css'>
+</head>
+<body>
+    <section id="home" class="parallax-container section scrollspy">
+        <div class="parallax darken-image"><img src="/static/images/banner1.jpg"></div>
+    </section>
+    <section id="popular" class="container section scrollspy">
+        <h2 class="center blue-text">Popular searches</h2>
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/heart.png">
+                    </div>
+                    <div class="card-content large-text">
+                        <a href="{% url 'list' %}"><h5>Cardiologist</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/dental.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'list' %}"><h5>Dentist</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/bone.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'list' %}"><h5>Neurologist</h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/child.jpg">
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'list' %}"><h5>Gynecologist </h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/kidney.png">
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'list' %}"><h5>Nephrologist </h5></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/static/images/lungs.jpg">
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'list' %}"><h5>Pulmonologist</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="parallax-container valign-wrapper spacer">
+        <div class="parallax darken-image"><img src="/static/images/banner2.png"></div>
+    </section>
+    <section id="about" class="container section scrollspy">
+        <div class="row">
+            <div class="col s6 m12">
+                <h3 class="center-align blue-text">About</h3>
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="card horizontal blue darken-1"><br>
+                            <div class="card-image col s2 m4">
+                                <br><img src="/static/images/doc.png" alt=""><br>
+                            </div>
+                            <div class="card-content white-text">
+                                <span class="card-title"><h4>Hey user!</h4></span>
+                                <ul>
+                                    <li><h6>Safety of your data is our top priority.</h6></li>
+                                    <li><h6>Instant appointment with doctors. Guaranteed.</h6></li>
+                                    <li><h6>Get all your medicines. Everytime. On time.</h6></li>
+                                    <li><h6>All your medical records in one secure app.</h6></li>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="{% url 'login' %}" class="btn btn-large waves-effect red lighten-1">Login
+                                    <i class="material-icons right">person</i></a>
+                                <br><br>
+                                <a href="{% url 'signup' %}" class="btn btn-large waves-effect red lighten-1">Register
+                                    <i class="material-icons right">person_add</i></a>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact" class="page-footer blue lighten-2 scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h3 class="center-align">Say Hello</h3>
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_box</i>
+                        <input placeholder="Name" id="name" type="text" class="validate">
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">phone</i>
+                        <input placeholder="Phone" id="phone" type="tel" class="validate">
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input placeholder="Email" id="email" type="email" class="validate">
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea placeholder="Your message here..." id="message" class="materialize-textarea"></textarea>
+                    </div>
+                    <button class="btn btn-small right waves-effect waves-light" type="submit" name="send-message">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                <div class="col s12 m6 l5 offset-l1">
+                    <div class="card-panel blue center-align">
+                        <i class="material-icons large">textsms</i>
+                        <ul class="center-align flow-text">
+                            <li><h3>Contact</h3></li>
+                            <li>080-2640-2640</li>
+                            <li>appointments@mydoc.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright blue darken-3">
+            <div class="container">© 2018 MyDoc Appointment</div>
+        </div>
+    </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
+{% endblock %}

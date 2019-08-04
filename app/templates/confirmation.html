@@ -1,0 +1,140 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html lang="en" >
+<head>
+	<title>MyDoc Appointment</title>
+	<link rel="icon" href="/static/images/doc.png" type="image/gif" sizes="16x16">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='/static/css/materialize.css'>
+    <style>
+        .box {
+          background-color: #fff;
+          border-radius: 6px;
+          overflow: hidden;
+          width: 400px;
+          margin: 48px auto;
+        }
+        .box > img {
+          width: 100%;
+          height: 240px;
+          object-fit: cover;
+        }
+        .textSection {
+          padding: 18px 24px;
+          text-align: center;
+        }
+        .textSection ._title {
+          display: block;
+          font-size: 18px;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .textSection p { line-height: 24px; }
+        .progress {
+          margin-bottom: 8px;
+          height: 12px;
+          border-radius: 6px;
+          background-color: #f1f8fa;
+        }
+        .tooltipSection {
+          position: relative;
+          margin-top: 64px;
+        }
+        .progress .determinate {
+          background-color: #3cb878;
+        }
+        ._tooltip {
+          display: inline-block;
+          position: absolute;
+          left: calc(70% - 24px);
+          background-color: #3cb878;
+          color: #fff;
+          top: -42px;
+          line-height: 26px;
+          font-size: 12px;
+          text-align: center;
+          width: 48px;
+          border-radius: 4px;
+        }
+        ._tooltip:after {
+            content:'';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            width: 0;
+            height: 0;
+            border-top: solid 6px #3cb878;
+            border-left: solid 6px transparent;
+            border-right: solid 6px transparent;
+        }
+        .progressBottomTxt {
+          font-weight: 500;
+          font-size: 12px;
+          display: block;
+          display: table;
+          width: 100%;
+          margin-bottom: 24px;
+        }
+        .progressBottomTxt ._left {
+          display: table-cell;
+          width: 50%;
+          text-align: left;
+        }
+        .progressBottomTxt ._right {
+          display: table-cell;
+          width: 50%;
+          text-align: right;
+        }
+        .progressBottomTxt > div > span {
+          color: #3cb878;
+        }
+        button.btnDonate {
+          background-color: #fff;
+          border: 1px solid #3cb878;
+          padding: 12px 32px;
+          border-radius: 6px;
+          color: #3cb878;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 8px;
+          transition: 0.3s all;
+        }
+        button.btnDonate:hover {
+          box-shadow: 0 0 4px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="section"></div>
+    <h4 class="center-align">Your payment was successfully processed :) </h4>
+    <div class="box">
+        <img src="/static/images/kid.jpg" alt="Banner Img">
+        <div class="textSection">
+            <div class="_title">Gift an education</div>
+            <div class="tooltipSection">
+                <div class="_tooltip">70%</div>
+                <div class="progress">
+                    <div class="determinate" style="width: 70%"></div>
+                </div>
+                <div class="progressBottomTxt">
+                    <div class="_left">
+                        Raised: <span>₹7lakh</span>
+                    </div>
+                    <div class="_right">
+                        Goal: <span>₹10lakh</span>
+                    </div>
+                </div>
+                <button class="btnDonate">Donate Now</button>
+                <a href="{% url 'home' %}"><button class="btnDonate">Back to Home</button></a>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'></script>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
+{% endblock %}

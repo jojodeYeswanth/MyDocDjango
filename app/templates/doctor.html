@@ -1,0 +1,81 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html lang="en" >
+<head>
+	<title>MyDoc Appointment</title>
+	<link rel="icon" href="images/doc.png" type="image/gif" sizes="16x16">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet' href='/static/css/materialize.css'>
+	<link rel='stylesheet' href='/static/css/materialize.min.css'>
+</head>
+<body>
+    <div class="row">
+        <div class="col s0 m0 l2">&nbsp </div>
+        <div class="col s12 m12 l8">
+            <div class="row">
+                {% if request.user.is_authenticated %}
+                    <h4>Specialists</h4>
+                    {% if doc_list %}
+                        {% for doctor in object_list %}
+                            <div class="col s12 m6 l4">
+                                <div class="card">
+                                    <div class="card-content black-text">
+                                        <div class="card__meta">
+                                            <a href="#"><i class="small material-icons">room</i>{{ doctor.Hospital_Name }}</a>
+                                        </div><br>
+                                        <div class="card-image col s3 m10">
+                                            <img src="/static/images/doctor.png" alt="">
+                                        </div>
+                                        <span class="card-title grey-text text-darken-4">{{ doctor.Doctor_Name }}</span>
+                                        <p class="card-subtitle grey-text text-darken-2">{{ doctor.Specialist_in }}</p>
+                                        <p class="card-subtitle grey-text text-darken-2">{{ doctor.Mail }}</p>
+                                        <p class="card-subtitle grey-text text-darken-2">+91 {{ doctor.Phone_Number }}</p>
+                                        <br>
+                                        <span class="blue-text text-darken-2 card-info"><i class="material-icons right">date_range</i>&nbsp;{{ doctor.Available_Days }} days</span>
+                                    </div>
+                                    <div class="card-action green">
+                                        <a href="{% url 'doctor' doctor.id %}" class="black-text"><i class="material-icons right">navigate_next</i>Book </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    <section class="container section" style="width: 900px;">
+                        <div class="row">
+                            <h4 class="center-align blue-text">Register to Book An Appointmnet :)</h4>
+                            <div class="row">
+                                <div class="">
+                                    <div class="card horizontal blue darken-1"><br>
+                                        <div class="card-image col s2 m4">
+                                            <br><img src="/static/images/doc.png" alt=""><br>
+                                        </div>
+                                        <div class="card-content white-text">
+                                            <span class="card-title"><h4>Hey user!</h4></span>
+                                            <ul>
+                                                <li><h6>Safety of your data is our top priority.</h6></li>
+                                                <li><h6>Instant appointment with doctors. Guaranteed.</h6></li>
+                                                <li><h6>Get all your medicines. Everytime. On time.</h6></li>
+                                                <li><h6>All your medical records in one secure app.</h6></li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-action">
+                                            <a href="{% url 'login' %}" class="btn btn-large waves-effect red lighten-1">Login
+                                                <i class="material-icons right">person</i></a>
+                                            <br><br>
+                                            <a href="{% url 'signup' %}" class="btn btn-large waves-effect red lighten-1">Register
+                                                <i class="material-icons right">person_add</i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
+{% endblock %}

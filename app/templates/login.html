@@ -1,0 +1,32 @@
+{% extends 'nav.html' %}
+{% block content %}
+{% load static %}
+{% load material_form %}
+<html>
+<head>
+	<title>MyDoc Appointment</title>
+	<link rel="icon" href="/static/images/doc.png" type="image/gif" sizes="16x16">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel='stylesheet' href='/static/css/materialize.css'>
+</head>
+<body>
+    <div class="section"></div>
+    <div class="container">
+        <div class="row valign-wrapper">
+            <div class="col s6 offset-s3 valign">
+                <div class="card">
+                    <div class="card-content black-text">
+                        <span class="card-title center red-text">Login</span>
+                        <form class="black-text" method="post">
+                            {% csrf_token %}
+                            {% form %}{% endform %}
+                            <button type='submit' class="btn teal">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+.darken-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+#home {
+  height: 300px;
+}
+.spacer {
+  height: 200px;
+}
+.strong {
+  font-weight: 700;
+}
+h4.header {
+  font-size: 1.5rem;
+  line-height: 2.508rem;
+  margin: 1.14rem 0 0.912rem 0;
+}
+.container  {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.container .row {
+  margin: 0 auto;
+}

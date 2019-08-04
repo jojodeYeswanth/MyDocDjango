@@ -1,0 +1,63 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html lang="en" >
+<head>
+	<title>MyDoc Appointment</title>
+	<link rel="icon" href="/static/images/doc.png" type="image/gif" sizes="16x16">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' href='/static/css/materialize.css'>
+	<link rel='stylesheet' href='/static/css/materialize.min.css'>
+    <style type="text/css">
+        @media only screen and (min-width : 601px) {
+            #id_card_type_container {
+                margin-top: 40px;
+                margin-left: 50px;
+            }
+        }
+</style>
+</head>
+<body>
+    <section id="about" class="container section">
+        <div class="row">
+            <div class="col s6 m12">
+                <h4 class="center-align blue-text">Doctor details</h4>
+                <div class="row">
+                    <div class="col s12 m12">
+                        <div class="card horizontal blue darken-1"><br>
+                            <div class="card-image col s2 m4">
+                                <br><img src="/static/images/doctor.png" alt=""><br>
+                            </div>
+                            <div class="card-content white-text">
+                                <span class="card-title"><h3>{{ adddoctor.Doctor_Name }}</h3></span>
+                                <span class="card-title"><h5>{{ adddoctor.Hospital_Name }}<i class="material-icons left">location_on</i></h5></span>
+                                <ul>
+                                    <li><h6>Specialist in: {{ adddoctor.Specialist_in }}</h6></li>
+                                    <li><h6>Available days: {{ adddoctor.Available_Days }}</h6></li>
+                                    <li><h6>Email: {{ adddoctor.Mail }}</h6></li>
+                                    <li><h6>Contact Number: +91 {{ adddoctor.Phone_Number }}</h6></li><br>
+                                    <a href="{% url 'appointment' %}" class="btn  red lighten-1 waves-effect">Get An Appointment now
+                                        <i class="material-icons right">event_note</i>
+                                    </a>
+                                </ul>
+                            </div>
+                            <div class="card-action">
+                                <a href="https://www.linkedin.com" class="btn btn-large red lighten-1 waves-effect">Follow on
+                                    <i class="fa fa-linkedin right"></i></a>
+                                <br><br>
+                                <a href="https://www.twitter.com" class="btn btn-large red lighten-1 waves-effect">Follow on
+                                    <i class="fa fa-twitter right"></i></a>
+                                <br><br>
+                                <a href="https://www.facebook.com" class="btn btn-large red lighten-1 waves-effect">Follow on
+                                    <i class="fa fa-facebook right"></i></a>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}
